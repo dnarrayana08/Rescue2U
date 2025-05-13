@@ -1,0 +1,816 @@
+/* --- Base Reset & Typography --- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #F8F7FC; /* Very light lavender-grey background */
+  color: #333;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* --- Header Section --- */
+.site-header {
+  background-color: #4A148C; /* Deep Purple */
+  color: #fff;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #CE93D8; /* Lighter, vibrant purple accent */
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.main-nav a {
+  color: #E1BEE7; /* Light purple for links */
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active-link {
+  color: #fff; /* White on hover for contrast */
+}
+
+.mobile-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* --- General Button Styles --- */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  border: 1px solid transparent;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn-primary {
+  background-color: #441fa2; /* Primary Purple */
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #6A1B9A; /* Darker Primary Purple */
+}
+
+.btn-secondary {
+  background-color: #E1BEE7; /* Light Purple */
+  color: #4A148C; /* Deep Purple text */
+  border: 1px solid #CE93D8;
+}
+
+.btn-secondary:hover {
+  background-color: #CE93D8; /* Slightly darker light purple */
+  color: #311B92;
+}
+
+.btn-outline { /* For hero section */
+  border: 2px solid #E1BEE7; /* Light purple border */
+  color: #fff;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background-color: #E1BEE7;
+  color: #4A148C; /* Deep Purple text */
+}
+
+/* --- Section Base Styling --- */
+section {
+  padding: 60px 0; /* Increased padding */
+}
+
+section h2 {
+  text-align: center;
+  font-size: 2.3rem; /* Slightly larger */
+  margin-bottom: 35px;
+  color: #311B92; /* Dark Indigo for headings */
+  font-weight: 600;
+}
+section p.subtitle, section > .container > p:first-of-type {
+    text-align: center;
+    font-size: 1.15rem; /* Slightly larger */
+    color: #ffffff;
+    margin-bottom: 35px;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* --- Hero Section --- */
+.hero-section {
+  background: linear-gradient(135deg, #6A1B9A 0%, #AB47BC 100%); /* Purple Gradient */
+  color: #fff;
+  padding: 90px 0;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.hero-section .subtitle {
+  font-size: 1.35rem;
+  margin-bottom: 35px;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #F3E5F5; /* Pale Purple text */
+}
+.hero-section .quick-alerts {
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+.hero-section .quick-alerts h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #E1BEE7; /* Light Purple for sub-heading */
+}
+
+.cta-buttons .btn {
+  margin: 10px 15px; /* Adjusted margin */
+}
+
+/* --- Alert Item Styling (Homepage & Alert Banners) --- */
+.alert-item, .alert-banner {
+  padding: 18px 22px; /* Increased padding */
+  border-radius: 8px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+}
+.alert-item i, .alert-banner i {
+  font-size: 1.3rem;
+}
+
+.alert-warning { /* Kept functional colors for clarity */
+  background-color: #FFF9C4;
+  color: #795548;
+  border-left: 5px solid #FFC107;
+}
+
+.alert-danger { /* Kept functional colors for clarity */
+  background-color: #FFCDD2;
+  color: #B71C1C;
+  border-left: 5px solid #F44336;
+}
+
+/* --- Live Data Dashboard Section --- */
+.data-dashboard {
+  background-color: #ffffff; /* White background for good contrast */
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px; /* Increased gap */
+  margin-top: 25px;
+}
+
+.metric-card {
+  background-color: #F3E5F5; /* Pale Purple */
+  padding: 30px 25px;
+  border-radius: 12px; /* Softer radius */
+  text-align: center;
+  border: 1px solid #E1BEE7; /* Light purple border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 15px rgba(74, 20, 140, 0.15); /* Purple shadow */
+}
+
+.metric-card i {
+  font-size: 2.5rem; /* Larger icon */
+  margin-bottom: 15px;
+  color: #7B1FA2; /* Primary Purple */
+}
+.metric-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #4A148C; /* Deep Purple */
+  font-weight: 500;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 700; /* Bolder */
+  color: #311B92; /* Dark Indigo */
+}
+
+.status-indicator {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 12px;
+}
+/* Status indicators using purple theme where appropriate */
+.status-normal {
+  background-color: #D1C4E9; /* Light Lavender */
+  color: #311B92; /* Dark Indigo text */
+}
+.status-moderate {
+  background-color: #B39DDB; /* Medium Lavender */
+  color: #4527A0; /* Deeper Indigo text */
+}
+/* Warning and Danger kept standard for clarity */
+.status-warning {
+  background-color: #FFF59D; /* Lighter Yellow */
+  color: #795548;
+}
+.status-danger {
+  background-color: #EF9A9A; /* Lighter Red */
+  color: #C62828;
+}
+
+
+.charts-maps-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 45px;
+}
+
+.chart-container,
+.map-container {
+  flex: 1 1 48%;
+  min-width: 300px;
+  background-color: #F9F6FE; /* Very Pale Purple */
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #E1BEE7;
+}
+.chart-container h3, .map-container h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  color: #4A148C; /* Deep Purple */
+}
+
+#dataChart {
+  width: 100% !important;
+  height: 360px !important;
+  margin: auto;
+}
+#map {
+  height: 360px;
+  width: 100%;
+  border-radius: 10px; /* Rounded map corners */
+}
+
+/* --- Danger Zone Alert System Section --- */
+.alert-system {
+  background-color: #FCE4EC; /* Light Pinkish-Purple */
+}
+.alert-system .alert-banner.alert-danger strong {
+  color: #AD1457; /* Stronger pink/red for emphasis */
+}
+.alert-system .alert-banner.alert-warning strong {
+  color: #D84315; /* Stronger orange for emphasis */
+}
+.alert-system .alert-banner a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.alert-system .alert-banner a:hover {
+  text-decoration: none;
+}
+
+.alert-subscription {
+  margin-top: 45px;
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid #F8BBD0; /* Light Pink border */
+}
+.alert-subscription h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #880E4F; /* Deep Pink/Maroon */
+}
+
+.subscription-form input,
+.subscription-form select {
+  width: 100%;
+  padding: 14px; /* Increased padding */
+  margin-bottom: 18px;
+  border: 1px solid #E0E0E0; /* Lighter border */
+  border-radius: 8px; /* Softer radius */
+  font-size: 1rem;
+}
+.subscription-form select {
+  appearance: none;
+  background-color: white;
+}
+.subscription-form button {
+  width: 100%;
+  background-color: #AD1457; /* Match alert heading */
+  color: #fff;
+}
+.subscription-form button:hover {
+  background-color: #880E4F;
+}
+
+/* --- Firefighter Unit Response Tracker Section --- */
+.response-tracker {
+  background-color: #EDE7F6; /* Light Lavender */
+}
+.tracker-table-container {
+  overflow-x: auto;
+}
+.tracker-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  background-color: #fff;
+  box-shadow: 0 3px 10px rgba(74, 20, 140, 0.1); /* Purple shadow */
+  border-radius: 10px;
+  overflow: hidden;
+}
+.tracker-table th,
+.tracker-table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid #E0E0E0; /* Lighter border */
+  font-size: 0.95rem;
+}
+.tracker-table th {
+  background-color: #D1C4E9; /* Lavender for header */
+  color: #311B92; /* Dark Indigo text */
+  font-weight: 600;
+}
+.tracker-table tr:last-child td {
+  border-bottom: none;
+}
+.tracker-table tr:hover {
+  background-color: #F3E5F5; /* Pale purple hover */
+}
+.tracker-table td i {
+  margin-right: 8px;
+  font-size: 1.1em;
+}
+.tracker-table .status-onscene {
+  color: #2E7D32; /* Green - kept for clarity */
+  font-weight: 500;
+}
+.tracker-table .status-enroute {
+  color: #7B1FA2; /* Primary Purple */
+  font-weight: 500;
+}
+.tracker-table .status-dispatched {
+  color: #E65100; /* Orange - kept for clarity */
+  font-weight: 500;
+}
+.tracker-table .status-active {
+  color: #0277BD; /* Blue - kept for clarity */
+  font-weight: 500;
+}
+
+/* --- Donation Page Section --- */
+.donation-page {
+  background-color: #F3E5F5; /* Pale Purple */
+}
+.donation-page h2 {
+  color: #6A1B9A; /* Darker Purple */
+}
+.campaigns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 35px;
+}
+.campaign-card {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  border: 1px solid #CE93D8; /* Light purple border */
+  box-shadow: 0 3px 12px rgba(74, 20, 140, 0.08); /* Purple shadow */
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.campaign-card h3 {
+  color: #7B1FA2; /* Primary Purple */
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.campaign-card p {
+  flex-grow: 1;
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+  color: #4E4E4E; /* Darker grey for text */
+  text-align: left;
+}
+.campaign-card label {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 6px;
+  display: block;
+}
+.campaign-card progress {
+  width: 100%;
+  height: 12px; /* Slightly thicker */
+  margin-bottom: 6px;
+  border-radius: 6px;
+}
+.campaign-card progress::-webkit-progress-bar {
+  background-color: #E0E0E0;
+  border-radius: 6px;
+}
+.campaign-card progress::-webkit-progress-value {
+  background-color: #8E24AA; /* Vibrant Purple for progress */
+  border-radius: 6px;
+}
+.campaign-card progress::-moz-progress-bar {
+  background-color: #8E24AA;
+  border-radius: 6px;
+}
+.campaign-card span {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 18px;
+  display: block;
+}
+.btn-donate-select {
+  background-color: #7B1FA2; /* Primary Purple */
+  color: #fff;
+  align-self: flex-start;
+  margin-top: auto;
+}
+.btn-donate-select:hover {
+  background-color: #6A1B9A;
+}
+
+.donation-form-container {
+  margin-top: 55px;
+  background: #ffffff;
+  padding: 35px 45px;
+  border-radius: 15px; /* More rounded */
+  box-shadow: 0 5px 20px rgba(74, 20, 140, 0.12); /* Stronger purple shadow */
+  border: 1px solid #CE93D8;
+}
+.donation-form-container h3 {
+  margin-bottom: 30px;
+  color: #6A1B9A; /* Darker Purple */
+  text-align: center;
+  font-size: 2rem;
+}
+.donation-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: center;
+}
+.form-group {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #4A148C; /* Deep purple label */
+}
+#donation_amount {
+  padding: 14px;
+  border: 1px solid #D1C4E9; /* Lavender border */
+  border-radius: 8px;
+  font-size: 1.1rem;
+  text-align: center;
+}
+.form-group p {
+  text-align: center;
+  margin-bottom: 12px;
+  font-weight: 500;
+  color: #4A148C;
+}
+.payment-methods {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  width: 100%;
+}
+.btn-payment-method {
+  flex: 1;
+  padding: 14px 18px;
+  border: 1px solid #CE93D8; /* Light purple border */
+  background-color: #F3E5F5; /* Pale purple */
+  color: #4A148C; /* Deep purple text */
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+.btn-payment-method:hover {
+  background-color: #E1BEE7; /* Darker pale purple */
+  border-color: #BA68C8;
+}
+.btn-payment-method.selected {
+  background-color: #7B1FA2; /* Primary Purple */
+  color: white;
+  border-color: #7B1FA2;
+}
+.btn-payment-method i {
+  margin-right: 8px;
+}
+#payment-element-placeholder {
+  width: 100%;
+  max-width: 480px;
+  margin-top: 18px;
+  border: 1px dashed #BA68C8; /* Dashed purple border */
+  padding: 25px;
+  text-align: center;
+  color: #6A1B9A;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  background-color: #F9F6FE; /* Very pale purple */
+}
+.btn-submit-donation {
+  padding: 14px 28px;
+  background-color: #6A1B9A; /* Darker Purple */
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  max-width: 480px;
+}
+.btn-submit-donation:disabled {
+  background-color: #BDBDBD; /* Greyed out */
+  cursor: not-allowed;
+}
+.secure-note {
+  font-size: 0.9rem;
+  color: #757575; /* Darker Grey */
+  text-align: center;
+  margin-top: 12px;
+}
+.secure-note i {
+  margin-right: 6px;
+  color: #7B1FA2; /* Primary Purple icon */
+}
+
+
+/* --- About Us Section --- */
+.about-us {
+  background-color: #F3E5F5; /* Pale Purple */
+}
+.about-us h2, .about-us h3 {
+  color: #4A148C; /* Deep Purple */
+}
+.about-us h3 {
+  text-align: center;
+  margin-top: 45px;
+  margin-bottom: 25px;
+  font-size: 1.8rem; /* Larger */
+}
+.about-us > .container > p:first-of-type {
+  max-width: 800px;
+  margin: 0 auto 35px auto;
+  text-align: center;
+  color: #4E4E4E;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 35px; /* Increased gap */
+  margin-top: 25px;
+}
+.team-member {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  width: calc(25% - 26.25px);
+  min-width: 220px; /* Increased min-width */
+  box-shadow: 0 4px 12px rgba(74, 20, 140, 0.1); /* Purple shadow */
+  border: 1px solid #E1BEE7; /* Light purple border */
+}
+.team-member img {
+  width: 130px; /* Larger image */
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 18px;
+  border: 4px solid #D1C4E9; /* Lavender border */
+}
+.team-member p {
+  font-weight: 600;
+  color: #4A148C; /* Deep Purple */
+  font-size: 1.15rem;
+}
+.team-member p i {
+  margin-right: 8px;
+  color: #9575CD; /* Medium Purple icon */
+}
+
+/* --- Footer Section --- */
+.site-footer {
+  background-color: #311B92; /* Dark Indigo */
+  color: #D1C4E9; /* Light Lavender text */
+  padding: 35px 0;
+  text-align: center;
+  font-size: 0.95rem; /* Slightly larger */
+}
+.footer-links {
+  margin-top: 12px;
+}
+.footer-links a {
+  color: #B39DDB; /* Medium Lavender links */
+  margin: 0 12px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* --- Utility Classes --- */
+.data-source-note {
+  font-size: 0.9rem; /* Slightly larger */
+  color: #616161; /* Darker Grey */
+  text-align: center;
+  margin-top: 25px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+  .team-member {
+    width: calc(50% - 17.5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-nav {
+    order: 3;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #4A148C; /* Match header */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  }
+  .main-nav ul {
+    flex-direction: column;
+    display: none;
+    padding: 10px 0;
+  }
+  .main-nav ul.active {
+    display: flex;
+  }
+  .main-nav li {
+    text-align: center;
+    padding: 12px 0; /* Increased padding */
+    border-bottom: 1px solid #6A1B9A; /* Separator */
+  }
+  .main-nav li:last-child {
+    border-bottom: none;
+  }
+  .mobile-nav-toggle {
+    display: block;
+    order: 2;
+  }
+  .logo a {
+    font-size: 1.7rem; /* Adjusted */
+  }
+
+  section {
+    padding: 45px 0;
+  }
+  section h2 {
+    font-size: 2rem;
+  }
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  .hero-section .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .charts-maps-grid {
+    flex-direction: column;
+  }
+  .chart-container, .map-container {
+    flex-basis: 100%;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted */
+  }
+
+  .team-member {
+    width: calc(100% - 0px);
+  }
+
+  .donation-form-container {
+    padding: 25px 20px; /* Adjusted */
+  }
+  .payment-methods {
+    flex-direction: column;
+  }
+  .btn-payment-method {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 15px;
+    }
+    section h2 {
+        font-size: 1.8rem;
+    }
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    .btn {
+        padding: 10px 20px; /* Adjusted */
+        font-size: 0.9rem;
+    }
+    .campaign-card {
+        padding: 20px 15px; /* Adjusted */
+    }
+    .donation-form-container h3 {
+        font-size: 1.7rem;
+    }
+}

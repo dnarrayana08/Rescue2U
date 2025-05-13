@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rescue2U - Environmental Monitoring & Disaster Response</title>
+    <link rel="stylesheet" href="CSS/code (1).css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <style>
+      /* Basic styles for the map container - move to style.css in a real project */
+      #map {
+        height: 400px; /* You must set a height for the map to be visible */
+        width: 100%;
+        border: 1px solid #ccc;
+        margin-top: 15px;
+      }
+      /* Add other styles to style.css */
+      /* Example style for status-active if you want to color the icon/text */
+      /* .status-active { color: #17a2b8; } */ /* Example: Teal color for active drone */
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="site-header">
+      <div class="container">
+        <div class="logo">
+          <a href="#home">Rescue<span>2U</span></a>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#dashboard">Live Data</a></li>
+            <li><a href="#alerts">Alerts</a></li>
+            <li><a href="#tracker">Response Tracker</a></li>
+            <li><a href="#donate">Donate</a></li>
+            <li><a href="#about">About Us</a></li>
+          </ul>
+        </nav>
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+          ☰
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+      <!-- 1. Homepage Section -->
+      <section id="home" class="hero-section">
+        <div class="container">
+          <h1>Welcome to Rescue2U</h1>
+          <p class="subtitle">
+            Real-time environmental monitoring and disaster response. Connecting
+            sensors, communities, and responders.
+          </p>
+
+          <div class="quick-alerts">
+            <h2>Current Alerts</h2>
+            <div class="alert-item alert-warning">
+              <i class="fas fa-exclamation-triangle"></i> High Water Levels
+              reported in Sector 7G. Monitor local advisories.
+            </div>
+            <div class="alert-item alert-danger">
+              <i class="fas fa-fire"></i> Active Fire Detected near UTM KL
+              Campus. Evacuation recommended for Zone Alpha.
+            </div>
+          </div>
+
+          <div class="cta-buttons">
+            <a href="#dashboard" class="btn btn-primary">View Live Data</a>
+            <a href="#donate" class="btn btn-secondary">Donate Now</a>
+            <a href="#" class="btn btn-outline">Report an Incident</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Live Data Dashboard Section -->
+      <section id="dashboard" class="data-dashboard">
+        <div class="container">
+          <h2>Live Data Dashboard</h2>
+          <p>Real-time environmental data from monitored zones.</p>
+
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <i class="fas fa-thermometer-half"></i>
+              <h3>Temperature</h3>
+              <p class="metric-value">28.5 °C</p>
+              <span class="status-indicator status-normal">Normal</span>
+            </div>
+            <div class="metric-card">
+              <i class="fas fa-fire-alt"></i>
+              <h3>Flame Detection</h3>
+              <p class="metric-value">Detected</p>
+              <span class="status-indicator status-danger">Alert</span>
+            </div>
+            <div class="metric-card">
+              <i class="fas fa-tint"></i>
+              <h3>Water Level</h3>
+              <p class="metric-value">1.2 m</p>
+              <span class="status-indicator status-warning">High</span>
+            </div>
+            <div class="metric-card">
+              <i class="fas fa-smog"></i>
+              <h3>Pollution Index</h3>
+              <p class="metric-value">75 AQI</p>
+              <span class="status-indicator status-moderate">Moderate</span>
+            </div>
+          </div>
+
+          <div class="charts-maps-grid">
+            <div class="chart-container">
+              <h3>Temperature Trend (Last 24 Hours)</h3>
+              <canvas id="dataChart"></canvas>
+              <!-- Canvas for Chart.js -->
+            </div>
+            <div class="map-container">
+              <h3>Active Zones Map</h3>
+              <div id="map"></div>
+              <!-- Div for Leaflet -->
+            </div>
+          </div>
+          <p class="data-source-note">
+            Note: Data displayed is currently illustrative and static for
+            demonstration.
+          </p>
+        </div>
+      </section>
+
+      <!-- 3. Danger Zone Alert System Section -->
+      <section id="alerts" class="alert-system">
+        <div class="container">
+          <h2>Danger Zone Alerts</h2>
+          <div class="current-location-alert">
+            <div class="alert-banner alert-danger">
+              <i class="fas fa-exclamation-triangle"></i>
+              <strong>ALERT:</strong> You are currently in or near an active
+              Fire Danger Zone (Zone Alpha). Please follow evacuation orders
+              immediately. <a href="#">More Info</a>
+            </div>
+            <div class="alert-banner alert-warning">
+              <i class="fas fa-tint"></i> <strong>Warning:</strong> High water
+              levels detected in your selected area (Sector 7G). Avoid low-lying
+              areas. <a href="#">More Info</a>
+            </div>
+          </div>
+          <div class="alert-subscription">
+            <h3>Subscribe for Local Alerts</h3>
+            <p>Get notified via SMS or Email about threats in your area.</p>
+            <form action="#" method="POST" class="subscription-form">
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Enter your phone number (optional)"
+              />
+              <select name="area_of_interest" required>
+                <option value="">Select Area of Interest</option>
+                <option value="zone_alpha">Zone Alpha</option>
+                <option value="sector_7g">Sector 7G</option>
+                <option value="utm_kl">UTM KL Campus</option>
+                <option value="current_location">Use Current Location</option>
+              </select>
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Firefighter Unit Response Tracker Section - UPDATED WITH MIMIC INFO -->
+      <section id="tracker" class="response-tracker">
+        <div class="container">
+          <h2>Firefighter Unit Response Tracker</h2>
+          <p>Real-time status of deployed emergency response units.</p>
+          <div class="tracker-table-container">
+            <table class="tracker-table">
+              <thead>
+                <tr>
+                  <th>Unit ID</th>
+                  <th>Location</th>
+                  <th>Status</th>
+                  <th>ETA</th>
+                  <th>Team Size</th>
+                  <th>Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>FRT-01 Alpha</td>
+                  <td>Zone Alpha (Fire - East Sector, Block C)</td>
+                  <td class="status-onscene">
+                    <i class="fas fa-check-circle"></i> On Scene
+                  </td>
+                  <td>-</td>
+                  <td>5 Members</td>
+                  <td>Primary attack line deployed. Containing spread. Oxygen levels: 85%.</td>
+                </tr>
+                <tr>
+                  <td>FRT-03 Bravo</td>
+                  <td>Approaching Zone Alpha (West Sector via Jln Meranti)</td>
+                  <td class="status-enroute">
+                    <i class="fas fa-truck"></i> En Route
+                  </td>
+                  <td>3 mins</td>
+                  <td>4 Members</td>
+                  <td>Heavy traffic near interchange. Using alternate route. Hazmat gear ready.</td>
+                </tr>
+                <tr>
+                  <td>WRT-02 Delta</td>
+                  <td>Sector 7G (Flood - Main St Bridge, Riverside Park)</td>
+                  <td class="status-enroute">
+                    <i class="fas fa-truck"></i> En Route
+                  </td>
+                  <td>10 mins</td>
+                  <td>6 Members</td>
+                  <td>Inflatable rescue boat ready. Monitoring water current speed. First aid kits checked.</td>
+                </tr>
+                <tr>
+                  <td>FRT-05 Charlie</td>
+                  <td>Central Command (Standby - Grid 5)</td>
+                  <td class="status-dispatched">
+                    <i class="fas fa-hourglass-start"></i> Dispatched
+                  </td>
+                  <td>18 mins (to Zone Alpha if needed)</td>
+                  <td>5 Members</td>
+                  <td>Awaiting final deployment order. Equipment check complete. Reviewing Zone Alpha schematics.</td>
+                </tr>
+                <tr>
+                  <td>MED-01 Echo</td>
+                  <td>Zone Alpha (Triage Point - Community Hall)</td>
+                  <td class="status-onscene">
+                    <i class="fas fa-medkit"></i> On Scene
+                  </td>
+                  <td>-</td>
+                  <td>3 Medics</td>
+                  <td>Triage area established. 2 minor smoke inhalation cases treated. Requesting extra blankets.</td>
+                </tr>
+                <tr>
+                  <td>UAV-01 Kilo</td>
+                  <td>Airspace above Sector 7G</td>
+                  <td class="status-active"> <!-- You might want to add CSS for .status-active -->
+                    <i class="fas fa-helicopter"></i> Aerial Support
+                  </td>
+                  <td>Ongoing</td>
+                  <td>2 Operators</td>
+                  <td>Thermal imaging active. Relaying flood extent data. Battery 70%.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="data-source-note">
+            Note: Tracking data is currently illustrative. Real-time updates would require backend integration.
+          </p>
+        </div>
+      </section>
+
+      <!-- 5. Donation Page Section -->
+      <section id="donate" class="donation-page">
+        <div class="container">
+          <h2>Support Disaster Victims</h2>
+          <p>
+            Your contribution can make a significant difference. Donate securely
+            below.
+          </p>
+          <div class="campaigns-grid">
+            <div class="campaign-card">
+              <h3>
+                <i class="fas fa-fire-extinguisher"></i> Fire Relief Fund - Zone
+                Alpha
+              </h3>
+              <p>
+                Support families displaced and affected by the recent fire in
+                Zone Alpha. Funds cover shelter, food, and essential supplies.
+              </p>
+              <label for="progress-fire">Goal: RM 50,000</label>
+              <progress id="progress-fire" value="27500" max="50000"></progress>
+              <span>RM 27,500 raised (55%)</span>
+              <a
+                href="#donation-form"
+                class="btn btn-primary btn-donate-select"
+                data-purpose="fire"
+                >Donate to this Cause</a
+              >
+            </div>
+            <div class="campaign-card">
+              <h3>
+                <i class="fas fa-house-damage"></i> Flood Victim Support -
+                Sector 7G
+              </h3>
+              <p>
+                Help residents affected by flooding in Sector 7G. Donations
+                provide clean water, sanitation kits, and temporary housing.
+              </p>
+              <label for="progress-flood">Goal: RM 30,000</label>
+              <progress
+                id="progress-flood"
+                value="11200"
+                max="30000"
+              ></progress>
+              <span>RM 11,200 raised (37%)</span>
+              <a
+                href="#donation-form"
+                class="btn btn-primary btn-donate-select"
+                data-purpose="flood"
+                >Donate to this Cause</a
+              >
+            </div>
+            <div class="campaign-card">
+              <h3>
+                <i class="fas fa-lungs"></i> Air Quality Improvement Initiative
+              </h3>
+              <p>
+                Support efforts to monitor and mitigate pollution, providing aid
+                to those with respiratory issues due to poor air quality.
+              </p>
+              <label for="progress-pollution">Goal: RM 15,000</label>
+              <progress
+                id="progress-pollution"
+                value="4500"
+                max="15000"
+              ></progress>
+              <span>RM 4,500 raised (30%)</span>
+              <a
+                href="#donation-form"
+                class="btn btn-primary btn-donate-select"
+                data-purpose="pollution"
+                >Donate to this Cause</a
+              >
+            </div>
+          </div>
+          <div id="donation-form" class="donation-form-container">
+            <h3>Make Your Donation</h3>
+            <form action="#" method="POST">
+              <div class="form-group">
+                <label for="donation_purpose">Select Donation Purpose:</label>
+                <select id="donation_purpose" name="donation_purpose" required>
+                  <option value="">-- Select Cause --</option>
+                  <option value="fire">Fire Relief Fund - Zone Alpha</option>
+                  <option value="flood">
+                    Flood Victim Support - Sector 7G
+                  </option>
+                  <option value="pollution">
+                    Air Quality Improvement Initiative
+                  </option>
+                  <option value="general">General Disaster Relief</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="donation_amount">Amount (RM):</label>
+                <input
+                  type="number"
+                  id="donation_amount"
+                  name="donation_amount"
+                  placeholder="e.g., 50"
+                  min="5"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <p>Choose Payment Method:</p>
+                <div class="payment-methods">
+                  <button
+                    type="button"
+                    class="btn btn-payment-method"
+                    data-method="paypal"
+                  >
+                    <i class="fab fa-paypal"></i> PayPal
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-payment-method"
+                    data-method="stripe"
+                  >
+                    <i class="fab fa-stripe-s"></i> Credit/Debit Card (Stripe)
+                  </button>
+                </div>
+                <div
+                  id="payment-element-placeholder"
+                  style="
+                    margin-top: 15px;
+                    border: 1px dashed #ccc;
+                    padding: 20px;
+                    text-align: center;
+                  "
+                >
+                  Secure Payment Form (e.g., Stripe Elements or PayPal button)
+                  will load here.
+                </div>
+              </div>
+              <button
+                type="submit"
+                class="btn btn-primary btn-submit-donation"
+                disabled
+              >
+                Proceed to Payment
+              </button>
+              <p class="secure-note">
+                <i class="fas fa-lock"></i> Your donation is processed securely.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. About Us Section -->
+      <section id="about" class="about-us">
+        <div class="container">
+          <h2>About Us</h2>
+          <p>
+            We are a team of passionate undergraduate students from Universiti
+            Teknologi Malaysia, Kuala Lumpur (UTM KL), currently pursuing our
+            Bachelor of Artificial Intelligence (Hons). With a shared vision for
+            using technology to solve real-world problems, we created Rescue2U—a
+            smart, data-driven platform to detect, respond to, and support
+            victims of natural disasters and environmental hazards.
+          </p>
+          <h3>Our Team</h3>
+<div class="team-list">
+  <div class="team-member">
+    <img src="images/dakshina.JPG" alt="Dakshina Narayana" />
+    <p><i class="fas fa-user"></i> Dakshina Narayana</p>
+  </div>
+  <div class="team-member">
+    <img src="images/shamalan.jpeg" alt="Shamalan" />
+    <p><i class="fas fa-user"></i> Shamalan</p>
+  </div>
+  <div class="team-member">
+    <img src="images/risikesan.jpeg" alt="Risikesan" />
+    <p><i class="fas fa-user"></i> Risikesan</p>
+  </div>
+  <div class="team-member">
+    <img src="images/virocchan.jpeg" alt="Virocchan" />
+    <p><i class="fas fa-user"></i> Virocchan</p>
+  </div>
+</div>
+      </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2025 Rescue2U Team - UTM KL. All Rights Reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> |
+          <a href="#home">Back to Top</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Leaflet JS -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+
+    <!-- Your Custom JavaScript -->
+    <script>
+      // Wait for the DOM to be fully loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        // --- Initialize Chart.js ---
+        const ctx = document.getElementById("dataChart");
+        if (ctx) {
+          new Chart(ctx, {
+            type: "line", // Example: line chart
+            data: {
+              labels: [
+                "00:00",
+                "04:00",
+                "08:00",
+                "12:00",
+                "16:00",
+                "20:00",
+                "23:59",
+              ], // Example time labels
+              datasets: [
+                {
+                  label: "Temperature (°C)",
+                  data: [22, 23, 25, 28, 27, 24, 23], // Example temperature data
+                  borderColor: "rgba(0, 123, 255, 1)", // Blue color for the line
+                  backgroundColor: "rgba(0, 123, 255, 0.1)", // Light blue fill
+                  tension: 0.1,
+                  fill: true,
+                },
+                {
+                  label: "Pollution Index (AQI)",
+                  data: [40, 45, 55, 75, 70, 60, 50], // Example AQI data
+                  borderColor: "rgba(255, 193, 7, 1)", // Yellow/Orange color
+                  backgroundColor: "rgba(255, 193, 7, 0.1)",
+                  tension: 0.1,
+                  fill: true,
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false, // Allows chart to fill container height better
+              scales: {
+                y: {
+                  beginAtZero: false, // Adjust based on your data range
+                },
+              },
+              plugins: {
+                legend: {
+                  position: "top",
+                },
+                tooltip: {
+                  mode: "index",
+                  intersect: false,
+                },
+              },
+            },
+          });
+        } else {
+          console.error("Chart canvas element with ID 'dataChart' not found.");
+        }
+
+        // --- Initialize Leaflet Map ---
+        const mapElement = document.getElementById("map");
+        if (mapElement) {
+          // Initialize the map and set its view to UTM KL coordinates and zoom level
+          const map = L.map("map").setView([3.1625, 101.712], 14); // Approx. UTM KL coordinates
+
+          // Add a tile layer to add to our map (OpenStreetMap)
+          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution:
+              '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          }).addTo(map);
+
+          // Example Markers for Active Zones (replace with dynamic data)
+          const fireIcon = L.icon({
+            // Custom icon for fire
+            iconUrl:
+              "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/svgs/solid/fire.svg", // Using a Font Awesome icon URL as an example
+            iconSize: [25, 25], // size of the icon
+            iconAnchor: [12, 25], // point of the icon which will correspond to marker's location
+            popupAnchor: [0, -25], // point from which the popup should open relative to the iconAnchor
+            className: "fire-marker-icon", // Add a class for potential custom styling
+          });
+
+          const floodIcon = L.icon({
+            // Custom icon for flood
+            iconUrl:
+              "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/svgs/solid/tint.svg",
+            iconSize: [25, 25],
+            iconAnchor: [12, 25],
+            popupAnchor: [0, -25],
+            className: "flood-marker-icon",
+          });
+
+          L.marker([3.165, 101.715], { icon: fireIcon })
+            .addTo(map)
+            .bindPopup(
+              "<b>Fire Alert!</b><br>Zone Alpha - Active Fire.<br>Sensor ID: FS001"
+            );
+
+          L.marker([3.159, 101.708])
+            .addTo(map) // Default Leaflet icon
+            .bindPopup(
+              "<b>Flood Warning!</b><br>Sector 7G - High Water Levels.<br>Sensor ID: WL003"
+            );
+
+          L.marker([3.1625, 101.712])
+            .addTo(map)
+            .bindPopup("UTM KL Campus<br>Monitoring Station.");
+
+          // Example: Add a circle to represent a general danger radius
+          L.circle([3.165, 101.715], {
+            color: "red",
+            fillColor: "#f03",
+            fillOpacity: 0.3,
+            radius: 500, // Radius in meters
+          })
+            .addTo(map)
+            .bindPopup("Fire Danger Zone - 500m Radius");
+        } else {
+          console.error("Map div element with ID 'map' not found.");
+        }
+
+        // --- Smooth Scroll for Navigation ---
+        const navLinks = document.querySelectorAll(
+          '.main-nav a[href^="#"], .cta-buttons a[href^="#"]'
+        );
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            let targetId = this.getAttribute("href");
+            // For buttons like "Donate to this Cause" that point to an element within a section
+            if (targetId.includes("#donation-form")) targetId = "#donate";
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              targetElement.scrollIntoView({
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+
+        // --- Mobile Navigation Toggle ---
+        const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
+        const mainNav = document.querySelector(".main-nav");
+        if (mobileNavToggle && mainNav) {
+          mobileNavToggle.addEventListener("click", () => {
+            mainNav.classList.toggle("active");
+          });
+        }
+
+        // --- Donation Form: Select purpose based on campaign button click ---
+        const donateSelectButtons =
+          document.querySelectorAll(".btn-donate-select");
+        const donationPurposeDropdown =
+          document.getElementById("donation_purpose");
+
+        if (donateSelectButtons.length > 0 && donationPurposeDropdown) {
+          donateSelectButtons.forEach((button) => {
+            button.addEventListener("click", function (e) {
+              e.preventDefault(); // Prevent default anchor jump
+              const purpose = this.getAttribute("data-purpose");
+              if (purpose) {
+                donationPurposeDropdown.value = purpose;
+              }
+              // Scroll to the donation form
+              document
+                .getElementById("donation-form")
+                .scrollIntoView({ behavior: "smooth" });
+            });
+          });
+        }
+
+        // --- Donation Form: Enable/disable payment button ---
+        // This is a very basic example. Real payment integration is more complex.
+        const donationAmountInput = document.getElementById("donation_amount");
+        const proceedButton = document.querySelector(".btn-submit-donation");
+        const paymentMethodButtons = document.querySelectorAll(
+          ".btn-payment-method"
+        );
+        let paymentMethodSelected = false;
+
+        if (paymentMethodButtons.length > 0 && proceedButton) {
+          paymentMethodButtons.forEach((button) => {
+            button.addEventListener("click", function () {
+              paymentMethodButtons.forEach((btn) =>
+                btn.classList.remove("selected")
+              ); // Deselect others
+              this.classList.add("selected"); // Select this one
+              paymentMethodSelected = true;
+              checkCanProceed();
+            });
+          });
+        }
+
+        if (donationAmountInput && proceedButton && donationPurposeDropdown) {
+          donationAmountInput.addEventListener("input", checkCanProceed);
+          donationPurposeDropdown.addEventListener("change", checkCanProceed);
+        }
+
+        function checkCanProceed() {
+          if (donationAmountInput && proceedButton && donationPurposeDropdown) {
+            const amountValid = parseFloat(donationAmountInput.value) >= 5;
+            const purposeSelected = donationPurposeDropdown.value !== "";
+            if (amountValid && purposeSelected && paymentMethodSelected) {
+              proceedButton.disabled = false;
+            } else {
+              proceedButton.disabled = true;
+            }
+          }
+        }
+      }); // End of DOMContentLoaded
+    </script>
+  </body>
+</html>
