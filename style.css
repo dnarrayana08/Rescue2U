@@ -1,3 +1,6 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
 /* --- Base Reset & Typography --- */
 *, *::before, *::after {
   margin: 0;
@@ -10,9 +13,9 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #F8F7FC; /* Very light lavender-grey background */
-  color: #333;
+  font-family: 'Montserrat', sans-serif; /* NEW FONT */
+  background-color: #F0F4F8; /* Light Blue-Grey background */
+  color: #3A4149; /* Darker grey for general text */
   line-height: 1.6;
   font-size: 16px;
 }
@@ -26,13 +29,13 @@ body {
 
 /* --- Header Section --- */
 .site-header {
-  background-color: #4A148C; /* Deep Purple */
+  background-color: #0D47A1; /* Deep Blue */
   color: #fff;
   padding: 15px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .site-header .container {
@@ -44,22 +47,22 @@ body {
 .logo a {
   color: #fff;
   font-size: 1.8rem;
-  font-weight: bold;
+  font-weight: 700; /* Bolder for Montserrat */
   text-decoration: none;
 }
 
 .logo span {
-  color: #CE93D8; /* Lighter, vibrant purple accent */
+  color: #64B5F6; /* Bright Sky Blue Accent */
 }
 
 .main-nav ul {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 28px;
 }
 
 .main-nav a {
-  color: #E1BEE7; /* Light purple for links */
+  color: #BBDEFB; /* Light Blue for links */
   text-decoration: none;
   font-weight: 500;
   padding: 5px 0;
@@ -68,7 +71,7 @@ body {
 
 .main-nav a:hover,
 .main-nav a.active-link {
-  color: #fff; /* White on hover for contrast */
+  color: #fff; /* White on hover */
 }
 
 .mobile-nav-toggle {
@@ -83,67 +86,68 @@ body {
 /* --- General Button Styles --- */
 .btn {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 12px 25px;
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
   border: 1px solid transparent;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .btn-primary {
-  background-color: #441fa2; /* Primary Purple */
+  background-color: #1976D2; /* Primary Blue */
   color: #fff;
 }
 
 .btn-primary:hover {
-  background-color: #6A1B9A; /* Darker Primary Purple */
+  background-color: #1565C0; /* Darker Primary Blue */
 }
 
 .btn-secondary {
-  background-color: #E1BEE7; /* Light Purple */
-  color: #4A148C; /* Deep Purple text */
-  border: 1px solid #CE93D8;
+  background-color: #64B5F6; /* Bright Sky Blue */
+  color: #0D47A1; /* Deep Blue text */
+  border: 1px solid #42A5F5;
 }
 
 .btn-secondary:hover {
-  background-color: #CE93D8; /* Slightly darker light purple */
-  color: #311B92;
+  background-color: #42A5F5; /* Slightly darker sky blue */
+  color: #0D47A1;
 }
 
 .btn-outline { /* For hero section */
-  border: 2px solid #E1BEE7; /* Light purple border */
+  border: 2px solid #90CAF9; /* Lighter Blue border */
   color: #fff;
   background: transparent;
 }
 
 .btn-outline:hover {
-  background-color: #E1BEE7;
-  color: #4A148C; /* Deep Purple text */
+  background-color: #90CAF9;
+  color: #0D47A1; /* Deep Blue text */
 }
 
 /* --- Section Base Styling --- */
 section {
-  padding: 60px 0; /* Increased padding */
+  padding: 60px 0;
 }
 
 section h2 {
   text-align: center;
-  font-size: 2.3rem; /* Slightly larger */
+  font-size: 2.3rem;
   margin-bottom: 35px;
-  color: #311B92; /* Dark Indigo for headings */
+  color: #0D47A1; /* Deep Blue for headings */
   font-weight: 600;
 }
+/* This selector for general section subtitles was white, changing to a readable dark color */
 section p.subtitle, section > .container > p:first-of-type {
     text-align: center;
-    font-size: 1.15rem; /* Slightly larger */
-    color: #ffffff;
+    font-size: 1.15rem;
+    color: #455A64; /* Dark Grey-Blue text */
     margin-bottom: 35px;
     max-width: 750px;
     margin-left: auto;
@@ -153,7 +157,7 @@ section p.subtitle, section > .container > p:first-of-type {
 
 /* --- Hero Section --- */
 .hero-section {
-  background: linear-gradient(135deg, #6A1B9A 0%, #AB47BC 100%); /* Purple Gradient */
+  background: linear-gradient(135deg, #1565C0 0%, #42A5F5 100%); /* Blue Gradient */
   color: #fff;
   padding: 90px 0;
   text-align: center;
@@ -166,13 +170,13 @@ section p.subtitle, section > .container > p:first-of-type {
   font-weight: 700;
 }
 
-.hero-section .subtitle {
+.hero-section .subtitle { /* THIS IS THE ONE FOR HERO SUBTITLE */
   font-size: 1.35rem;
   margin-bottom: 35px;
   max-width: 750px;
   margin-left: auto;
   margin-right: auto;
-  color: #F3E5F5; /* Pale Purple text */
+  color: #ffffff; /* WHITE TEXT AS REQUESTED */
 }
 .hero-section .quick-alerts {
   margin-top: 35px;
@@ -181,16 +185,16 @@ section p.subtitle, section > .container > p:first-of-type {
 .hero-section .quick-alerts h2 {
   font-size: 1.6rem;
   margin-bottom: 20px;
-  color: #E1BEE7; /* Light Purple for sub-heading */
+  color: #E3F2FD; /* Very Light Blue for sub-heading */
 }
 
 .cta-buttons .btn {
-  margin: 10px 15px; /* Adjusted margin */
+  margin: 10px 15px;
 }
 
 /* --- Alert Item Styling (Homepage & Alert Banners) --- */
 .alert-item, .alert-banner {
-  padding: 18px 22px; /* Increased padding */
+  padding: 18px 22px;
   border-radius: 8px;
   margin-bottom: 18px;
   display: flex;
@@ -203,60 +207,74 @@ section p.subtitle, section > .container > p:first-of-type {
   font-size: 1.3rem;
 }
 
-.alert-warning { /* Kept functional colors for clarity */
-  background-color: #FFF9C4;
-  color: #795548;
-  border-left: 5px solid #FFC107;
+.alert-warning {
+  background-color: #FFFDE7; /* Lighter Cream Yellow */
+  color: #5D4037; /* Brownish text */
+  border-left: 5px solid #FFB300; /* Amber border */
 }
 
-.alert-danger { /* Kept functional colors for clarity */
-  background-color: #FFCDD2;
-  color: #B71C1C;
-  border-left: 5px solid #F44336;
+.alert-danger {
+  background-color: #FFEBEE; /* Lighter Pink/Red */
+  color: #C62828; /* Darker Red text */
+  border-left: 5px solid #E53935; /* Red border */
 }
 
 /* --- Live Data Dashboard Section --- */
 .data-dashboard {
-  background-color: #ffffff; /* White background for good contrast */
+  background-color: #ffffff;
 }
 
 .metrics-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 30px; /* Increased gap */
+  gap: 30px;
   margin-top: 25px;
 }
 
 .metric-card {
-  background-color: #F3E5F5; /* Pale Purple */
+  background-color: #E3F2FD; /* Very Light Blue */
   padding: 30px 25px;
-  border-radius: 12px; /* Softer radius */
+  border-radius: 12px;
   text-align: center;
-  border: 1px solid #E1BEE7; /* Light purple border */
+  border: 1px solid #B0BEC5; /* Blue Grey border */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .metric-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 6px 15px rgba(74, 20, 140, 0.15); /* Purple shadow */
+  box-shadow: 0 6px 15px rgba(13, 71, 161, 0.15); /* Deep Blue shadow */
 }
 
 .metric-card i {
-  font-size: 2.5rem; /* Larger icon */
+  font-size: 2.5rem;
   margin-bottom: 15px;
-  color: #7B1FA2; /* Primary Purple */
+  /* Default icon color can be set here if needed, or overridden below */
 }
+/* SPECIFIC ICON COLORS FOR LIVE DATA DASHBOARD */
+.metrics-grid .metric-card:nth-of-type(1) i { /* Temperature */
+  color: #4FC3F7; /* Light Blue */
+}
+.metrics-grid .metric-card:nth-of-type(2) i { /* Flame Detection */
+  color: #FFA726; /* Orange */
+}
+.metrics-grid .metric-card:nth-of-type(3) i { /* Water Level */
+  color: #29B6F6; /* Cyan Blue */
+}
+.metrics-grid .metric-card:nth-of-type(4) i { /* Pollution Index */
+  color: #78909C; /* Blue Grey */
+}
+
 .metric-card h3 {
   font-size: 1.2rem;
   margin-bottom: 10px;
-  color: #4A148C; /* Deep Purple */
+  color: #0D47A1; /* Deep Blue */
   font-weight: 500;
 }
 
 .metric-value {
   font-size: 2rem;
-  font-weight: 700; /* Bolder */
-  color: #311B92; /* Dark Indigo */
+  font-weight: 700;
+  color: #1A237E; /* Indigo */
 }
 
 .status-indicator {
@@ -267,23 +285,21 @@ section p.subtitle, section > .container > p:first-of-type {
   font-weight: 500;
   margin-top: 12px;
 }
-/* Status indicators using purple theme where appropriate */
 .status-normal {
-  background-color: #D1C4E9; /* Light Lavender */
-  color: #311B92; /* Dark Indigo text */
+  background-color: #A5D6A7; /* Light Green */
+  color: #2E7D32; /* Dark Green */
 }
 .status-moderate {
-  background-color: #B39DDB; /* Medium Lavender */
-  color: #4527A0; /* Deeper Indigo text */
+  background-color: #BBDEFB; /* Light Blue */
+  color: #0D47A1; /* Deep Blue */
 }
-/* Warning and Danger kept standard for clarity */
 .status-warning {
-  background-color: #FFF59D; /* Lighter Yellow */
-  color: #795548;
+  background-color: #FFF176; /* Pale Yellow */
+  color: #5D4037; /* Brownish */
 }
 .status-danger {
-  background-color: #EF9A9A; /* Lighter Red */
-  color: #C62828;
+  background-color: #EF9A9A; /* Light Red */
+  color: #C62828; /* Dark Red */
 }
 
 
@@ -298,16 +314,16 @@ section p.subtitle, section > .container > p:first-of-type {
 .map-container {
   flex: 1 1 48%;
   min-width: 300px;
-  background-color: #F9F6FE; /* Very Pale Purple */
+  background-color: #FAFCFF; /* Off-White with slight blue tint */
   padding: 25px;
   border-radius: 12px;
-  border: 1px solid #E1BEE7;
+  border: 1px solid #CFD8DC; /* Blue Grey border */
 }
 .chart-container h3, .map-container h3 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 1.3rem;
-  color: #4A148C; /* Deep Purple */
+  color: #1976D2; /* Primary Blue */
 }
 
 #dataChart {
@@ -318,26 +334,18 @@ section p.subtitle, section > .container > p:first-of-type {
 #map {
   height: 360px;
   width: 100%;
-  border-radius: 10px; /* Rounded map corners */
+  border-radius: 10px;
 }
 
 /* --- Danger Zone Alert System Section --- */
 .alert-system {
-  background-color: #FCE4EC; /* Light Pinkish-Purple */
+  background-color: #E0F7FA; /* Very Light Cyan */
 }
 .alert-system .alert-banner.alert-danger strong {
-  color: #AD1457; /* Stronger pink/red for emphasis */
+  color: #B71C1C; /* Dark Red for emphasis */
 }
 .alert-system .alert-banner.alert-warning strong {
-  color: #D84315; /* Stronger orange for emphasis */
-}
-.alert-system .alert-banner a {
-  color: inherit;
-  font-weight: 600;
-  text-decoration: underline;
-}
-.alert-system .alert-banner a:hover {
-  text-decoration: none;
+  color: #E65100; /* Dark Orange for emphasis */
 }
 
 .alert-subscription {
@@ -346,39 +354,35 @@ section p.subtitle, section > .container > p:first-of-type {
   padding: 35px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  border: 1px solid #F8BBD0; /* Light Pink border */
+  border: 1px solid #B2EBF2; /* Light Cyan border */
 }
 .alert-subscription h3 {
   text-align: center;
   margin-bottom: 20px;
-  color: #880E4F; /* Deep Pink/Maroon */
+  color: #006064; /* Dark Cyan */
 }
 
 .subscription-form input,
 .subscription-form select {
   width: 100%;
-  padding: 14px; /* Increased padding */
+  padding: 14px;
   margin-bottom: 18px;
-  border: 1px solid #E0E0E0; /* Lighter border */
-  border-radius: 8px; /* Softer radius */
+  border: 1px solid #B0BEC5; /* Blue Grey border */
+  border-radius: 8px;
   font-size: 1rem;
-}
-.subscription-form select {
-  appearance: none;
-  background-color: white;
 }
 .subscription-form button {
   width: 100%;
-  background-color: #AD1457; /* Match alert heading */
+  background-color: #00838F; /* Medium Cyan */
   color: #fff;
 }
 .subscription-form button:hover {
-  background-color: #880E4F;
+  background-color: #006064; /* Darker Cyan */
 }
 
 /* --- Firefighter Unit Response Tracker Section --- */
 .response-tracker {
-  background-color: #EDE7F6; /* Light Lavender */
+  background-color: #E3F2FD; /* Very Light Blue */
 }
 .tracker-table-container {
   overflow-x: auto;
@@ -388,7 +392,7 @@ section p.subtitle, section > .container > p:first-of-type {
   border-collapse: collapse;
   margin-top: 25px;
   background-color: #fff;
-  box-shadow: 0 3px 10px rgba(74, 20, 140, 0.1); /* Purple shadow */
+  box-shadow: 0 3px 10px rgba(13, 71, 161, 0.1); /* Deep Blue shadow */
   border-radius: 10px;
   overflow: hidden;
 }
@@ -396,47 +400,28 @@ section p.subtitle, section > .container > p:first-of-type {
 .tracker-table td {
   padding: 14px 18px;
   text-align: left;
-  border-bottom: 1px solid #E0E0E0; /* Lighter border */
+  border-bottom: 1px solid #CFD8DC; /* Blue Grey border */
   font-size: 0.95rem;
 }
 .tracker-table th {
-  background-color: #D1C4E9; /* Lavender for header */
-  color: #311B92; /* Dark Indigo text */
+  background-color: #BBDEFB; /* Light Blue for header */
+  color: #0D47A1; /* Deep Blue text */
   font-weight: 600;
 }
-.tracker-table tr:last-child td {
-  border-bottom: none;
-}
 .tracker-table tr:hover {
-  background-color: #F3E5F5; /* Pale purple hover */
+  background-color: #E3F2FD; /* Very light blue hover */
 }
-.tracker-table td i {
-  margin-right: 8px;
-  font-size: 1.1em;
-}
-.tracker-table .status-onscene {
-  color: #2E7D32; /* Green - kept for clarity */
-  font-weight: 500;
-}
-.tracker-table .status-enroute {
-  color: #7B1FA2; /* Primary Purple */
-  font-weight: 500;
-}
-.tracker-table .status-dispatched {
-  color: #E65100; /* Orange - kept for clarity */
-  font-weight: 500;
-}
-.tracker-table .status-active {
-  color: #0277BD; /* Blue - kept for clarity */
-  font-weight: 500;
-}
+.tracker-table .status-onscene { color: #388E3C; } /* Green */
+.tracker-table .status-enroute { color: #1976D2; } /* Primary Blue */
+.tracker-table .status-dispatched { color: #F57C00; } /* Orange */
+.tracker-table .status-active { color: #0288D1; } /* Light Blue (for drone/aerial) */
 
 /* --- Donation Page Section --- */
 .donation-page {
-  background-color: #F3E5F5; /* Pale Purple */
+  background-color: #E1F5FE; /* Lightest Blue */
 }
 .donation-page h2 {
-  color: #6A1B9A; /* Darker Purple */
+  color: #0277BD; /* Medium Light Blue */
 }
 .campaigns-grid {
   display: grid;
@@ -448,25 +433,78 @@ section p.subtitle, section > .container > p:first-of-type {
   background: #fff;
   padding: 30px 25px;
   border-radius: 12px;
-  border: 1px solid #CE93D8; /* Light purple border */
-  box-shadow: 0 3px 12px rgba(74, 20, 140, 0.08); /* Purple shadow */
-  display: flex;
-  flex-direction: column;
-  text-align: left;
+  border: 1px solid #B3E5FC; /* Lighter Blue border */
+  box-shadow: 0 3px 12px rgba(2, 119, 189, 0.08); /* Medium Light Blue shadow */
 }
 .campaign-card h3 {
-  color: #7B1FA2; /* Primary Purple */
-  margin-bottom: 12px;
-  font-size: 1.4rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  color: #01579B; /* Darker Light Blue */
 }
+.campaign-card progress::-webkit-progress-value { background-color: #03A9F4; } /* Bright Cyan Blue */
+.campaign-card progress::-moz-progress-bar { background-color: #03A9F4; }
+.btn-donate-select { background-color: #0288D1; } /* Medium Light Blue */
+.btn-donate-select:hover { background-color: #0277BD; }
+
+.donation-form-container {
+  margin-top: 55px;
+  background: #ffffff;
+  padding: 35px 45px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(13, 71, 161, 0.12); /* Deep Blue shadow */
+  border: 1px solid #90CAF9; /* Lighter Blue border */
+}
+.donation-form-container h3 { color: #1565C0; font-size: 2rem; } /* Darker Primary Blue */
+.form-group label { color: #0D47A1; } /* Deep Blue label */
+#donation_amount { border: 1px solid #BBDEFB; } /* Light Blue border */
+.form-group p { color: #0D47A1; }
+.btn-payment-method {
+  border: 1px solid #90CAF9; background-color: #E3F2FD; color: #1976D2;
+}
+.btn-payment-method:hover { background-color: #BBDEFB; border-color: #64B5F6; }
+.btn-payment-method.selected { background-color: #1976D2; color: white; border-color: #1976D2; }
+#payment-element-placeholder {
+  border: 1px dashed #64B5F6; color: #1E88E5; background-color: #F0F8FF;
+}
+.btn-submit-donation { background-color: #1565C0; } /* Darker Primary Blue */
+.secure-note i { color: #1976D2; } /* Primary Blue icon */
+
+
+/* --- About Us Section --- */
+.about-us {
+  background-color: #E3F2FD; /* Very Light Blue */
+}
+.about-us h2, .about-us h3 {
+  color: #0D47A1; /* Deep Blue */
+}
+.about-us h3 { font-size: 1.8rem; }
+.team-member {
+  box-shadow: 0 4px 12px rgba(13, 71, 161, 0.1); /* Deep Blue shadow */
+  border: 1px solid #BBDEFB; /* Light blue border */
+}
+.team-member img {
+  width: 120px; /* Adjusted from your purple CSS */
+  height: 120px; /* Adjusted from your purple CSS */
+  border-radius: 50%; /* Standard circle */
+  border: 4px solid #90CAF9; /* Lighter Blue border */
+}
+.team-member p { color: #1976D2; } /* Primary Blue */
+.team-member p i { color: #42A5F5; } /* Sky Blue icon */
+
+/* --- Footer Section --- */
+.site-footer {
+  background-color: #0A2840; /* Very Deep, Dark Blue */
+  color: #B0BEC5; /* Blue Grey text */
+  padding: 35px 0;
+  font-size: 0.95rem;
+}
+.footer-links a { color: #64B5F6; } /* Bright Sky Blue links */
+.footer-links a:hover { color: #fff; }
+
+/* --- Utility Classes (Copied from your purple CSS as they are general) --- */
 .campaign-card p {
   flex-grow: 1;
   margin-bottom: 18px;
   font-size: 0.95rem;
-  color: #4E4E4E; /* Darker grey for text */
+  color: #4E4E4E;
   text-align: left;
 }
 .campaign-card label {
@@ -477,7 +515,7 @@ section p.subtitle, section > .container > p:first-of-type {
 }
 .campaign-card progress {
   width: 100%;
-  height: 12px; /* Slightly thicker */
+  height: 12px;
   margin-bottom: 6px;
   border-radius: 6px;
 }
@@ -485,43 +523,11 @@ section p.subtitle, section > .container > p:first-of-type {
   background-color: #E0E0E0;
   border-radius: 6px;
 }
-.campaign-card progress::-webkit-progress-value {
-  background-color: #8E24AA; /* Vibrant Purple for progress */
-  border-radius: 6px;
-}
-.campaign-card progress::-moz-progress-bar {
-  background-color: #8E24AA;
-  border-radius: 6px;
-}
 .campaign-card span {
   font-size: 0.9rem;
   color: #333;
   margin-bottom: 18px;
   display: block;
-}
-.btn-donate-select {
-  background-color: #7B1FA2; /* Primary Purple */
-  color: #fff;
-  align-self: flex-start;
-  margin-top: auto;
-}
-.btn-donate-select:hover {
-  background-color: #6A1B9A;
-}
-
-.donation-form-container {
-  margin-top: 55px;
-  background: #ffffff;
-  padding: 35px 45px;
-  border-radius: 15px; /* More rounded */
-  box-shadow: 0 5px 20px rgba(74, 20, 140, 0.12); /* Stronger purple shadow */
-  border: 1px solid #CE93D8;
-}
-.donation-form-container h3 {
-  margin-bottom: 30px;
-  color: #6A1B9A; /* Darker Purple */
-  text-align: center;
-  font-size: 2rem;
 }
 .donation-form-container form {
   display: flex;
@@ -536,105 +542,24 @@ section p.subtitle, section > .container > p:first-of-type {
   flex-direction: column;
   align-items: stretch;
 }
-.form-group label {
-  margin-bottom: 8px;
-  font-weight: 500;
-  color: #4A148C; /* Deep purple label */
-}
-#donation_amount {
-  padding: 14px;
-  border: 1px solid #D1C4E9; /* Lavender border */
-  border-radius: 8px;
-  font-size: 1.1rem;
-  text-align: center;
-}
-.form-group p {
-  text-align: center;
-  margin-bottom: 12px;
-  font-weight: 500;
-  color: #4A148C;
-}
 .payment-methods {
   display: flex;
   gap: 18px;
   justify-content: center;
   width: 100%;
 }
-.btn-payment-method {
-  flex: 1;
-  padding: 14px 18px;
-  border: 1px solid #CE93D8; /* Light purple border */
-  background-color: #F3E5F5; /* Pale purple */
-  color: #4A148C; /* Deep purple text */
-  border-radius: 8px;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
-}
-.btn-payment-method:hover {
-  background-color: #E1BEE7; /* Darker pale purple */
-  border-color: #BA68C8;
-}
-.btn-payment-method.selected {
-  background-color: #7B1FA2; /* Primary Purple */
-  color: white;
-  border-color: #7B1FA2;
-}
 .btn-payment-method i {
   margin-right: 8px;
 }
-#payment-element-placeholder {
-  width: 100%;
-  max-width: 480px;
-  margin-top: 18px;
-  border: 1px dashed #BA68C8; /* Dashed purple border */
-  padding: 25px;
-  text-align: center;
-  color: #6A1B9A;
-  font-size: 0.9rem;
-  border-radius: 8px;
-  background-color: #F9F6FE; /* Very pale purple */
-}
-.btn-submit-donation {
-  padding: 14px 28px;
-  background-color: #6A1B9A; /* Darker Purple */
-  color: #fff;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  width: 100%;
-  max-width: 480px;
-}
 .btn-submit-donation:disabled {
-  background-color: #BDBDBD; /* Greyed out */
+  background-color: #BDBDBD;
   cursor: not-allowed;
 }
 .secure-note {
   font-size: 0.9rem;
-  color: #757575; /* Darker Grey */
+  color: #757575;
   text-align: center;
   margin-top: 12px;
-}
-.secure-note i {
-  margin-right: 6px;
-  color: #7B1FA2; /* Primary Purple icon */
-}
-
-
-/* --- About Us Section --- */
-.about-us {
-  background-color: #F3E5F5; /* Pale Purple */
-}
-.about-us h2, .about-us h3 {
-  color: #4A148C; /* Deep Purple */
-}
-.about-us h3 {
-  text-align: center;
-  margin-top: 45px;
-  margin-bottom: 25px;
-  font-size: 1.8rem; /* Larger */
 }
 .about-us > .container > p:first-of-type {
   max-width: 800px;
@@ -648,69 +573,24 @@ section p.subtitle, section > .container > p:first-of-type {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 35px; /* Increased gap */
+  gap: 35px;
   margin-top: 25px;
 }
-.team-member {
-  background-color: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  text-align: center;
-  width: calc(25% - 26.25px);
-  min-width: 220px; /* Increased min-width */
-  box-shadow: 0 4px 12px rgba(74, 20, 140, 0.1); /* Purple shadow */
-  border: 1px solid #E1BEE7; /* Light purple border */
-}
-.team-member img {
-  width: 130px; /* Larger image */
-  height: 130px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
-  margin-bottom: 18px;
-  border: 4px solid #D1C4E9; /* Lavender border */
-}
-.team-member p {
-  font-weight: 600;
-  color: #4A148C; /* Deep Purple */
-  font-size: 1.15rem;
-}
-.team-member p i {
-  margin-right: 8px;
-  color: #9575CD; /* Medium Purple icon */
-}
-
-/* --- Footer Section --- */
-.site-footer {
-  background-color: #311B92; /* Dark Indigo */
-  color: #D1C4E9; /* Light Lavender text */
-  padding: 35px 0;
-  text-align: center;
-  font-size: 0.95rem; /* Slightly larger */
-}
-.footer-links {
-  margin-top: 12px;
-}
-.footer-links a {
-  color: #B39DDB; /* Medium Lavender links */
-  margin: 0 12px;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-.footer-links a:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
-/* --- Utility Classes --- */
 .data-source-note {
-  font-size: 0.9rem; /* Slightly larger */
-  color: #616161; /* Darker Grey */
+  font-size: 0.9rem;
+  color: #616161;
   text-align: center;
   margin-top: 25px;
 }
+.tracker-table td i {
+  margin-right: 8px;
+  font-size: 1.1em;
+}
+.tracker-table tr:last-child td {
+  border-bottom: none;
+}
 
-/* --- Responsive Design --- */
+/* --- Responsive Design (Copied from your purple CSS as it's structural) --- */
 @media (max-width: 992px) {
   .team-member {
     width: calc(50% - 17.5px);
@@ -724,7 +604,7 @@ section p.subtitle, section > .container > p:first-of-type {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #4A148C; /* Match header */
+    background-color: #0D47A1; /* Match header */
     box-shadow: 0 3px 6px rgba(0,0,0,0.2);
   }
   .main-nav ul {
@@ -737,8 +617,8 @@ section p.subtitle, section > .container > p:first-of-type {
   }
   .main-nav li {
     text-align: center;
-    padding: 12px 0; /* Increased padding */
-    border-bottom: 1px solid #6A1B9A; /* Separator */
+    padding: 12px 0;
+    border-bottom: 1px solid #1E88E566; /* Lighter Blue separator */
   }
   .main-nav li:last-child {
     border-bottom: none;
@@ -748,7 +628,7 @@ section p.subtitle, section > .container > p:first-of-type {
     order: 2;
   }
   .logo a {
-    font-size: 1.7rem; /* Adjusted */
+    font-size: 1.7rem;
   }
 
   section {
@@ -772,7 +652,7 @@ section p.subtitle, section > .container > p:first-of-type {
   }
 
   .metrics-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 
   .team-member {
@@ -780,7 +660,7 @@ section p.subtitle, section > .container > p:first-of-type {
   }
 
   .donation-form-container {
-    padding: 25px 20px; /* Adjusted */
+    padding: 25px 20px;
   }
   .payment-methods {
     flex-direction: column;
@@ -804,11 +684,11 @@ section p.subtitle, section > .container > p:first-of-type {
         grid-template-columns: 1fr;
     }
     .btn {
-        padding: 10px 20px; /* Adjusted */
+        padding: 10px 20px;
         font-size: 0.9rem;
     }
     .campaign-card {
-        padding: 20px 15px; /* Adjusted */
+        padding: 20px 15px;
     }
     .donation-form-container h3 {
         font-size: 1.7rem;
