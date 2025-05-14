@@ -147,7 +147,7 @@ section h2 {
 section p.subtitle, section > .container > p:first-of-type {
     text-align: center;
     font-size: 1.15rem;
-    color: #455A64; /* Dark Grey-Blue text */
+    color: #ffffff; /* Dark Grey-Blue text */
     margin-bottom: 35px;
     max-width: 750px;
     margin-left: auto;
@@ -176,7 +176,7 @@ section p.subtitle, section > .container > p:first-of-type {
   max-width: 750px;
   margin-left: auto;
   margin-right: auto;
-  color: #ffffff; /* WHITE TEXT AS REQUESTED */
+  color: #ff0000; /* WHITE TEXT AS REQUESTED */
 }
 .hero-section .quick-alerts {
   margin-top: 35px;
@@ -391,7 +391,7 @@ section p.subtitle, section > .container > p:first-of-type {
   width: 100%;
   border-collapse: collapse;
   margin-top: 25px;
-  background-color: #fff;
+  background-color: #ffffff;
   box-shadow: 0 3px 10px rgba(13, 71, 161, 0.1); /* Deep Blue shadow */
   border-radius: 10px;
   overflow: hidden;
@@ -470,25 +470,60 @@ section p.subtitle, section > .container > p:first-of-type {
 
 /* --- About Us Section --- */
 .about-us {
-  background-color: #E3F2FD; /* Very Light Blue */
+  background-color: #F3E5F5; /* Pale Purple */
 }
 .about-us h2, .about-us h3 {
-  color: #0D47A1; /* Deep Blue */
+  color: #4A148C; /* Deep Purple */
 }
-.about-us h3 { font-size: 1.8rem; }
+.about-us h3 {
+  text-align: center;
+  margin-top: 45px;
+  margin-bottom: 25px;
+  font-size: 1.8rem; /* Larger */
+}
+.about-us > .container > p:first-of-type {
+  max-width: 800px;
+  margin: 0 auto 35px auto;
+  text-align: center;
+  color: #4E4E4E;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 35px; /* Increased gap */
+  margin-top: 25px;
+}
 .team-member {
-  box-shadow: 0 4px 12px rgba(13, 71, 161, 0.1); /* Deep Blue shadow */
-  border: 1px solid #BBDEFB; /* Light blue border */
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  width: calc(25% - 26.25px);
+  min-width: 220px; /* Increased min-width */
+  box-shadow: 0 4px 12px rgba(74, 20, 140, 0.1); /* Purple shadow */
+  border: 1px solid #E1BEE7; /* Light purple border */
 }
 .team-member img {
-  width: 120px; /* Adjusted from your purple CSS */
-  height: 120px; /* Adjusted from your purple CSS */
-  border-radius: 50%; /* Standard circle */
-  border: 4px solid #90CAF9; /* Lighter Blue border */
+  width: 100px; /* Larger image */
+  height: 100px;
+  border-radius: 80%;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 18px;
+  border: 4px solid #D1C4E9; /* Lavender border */
 }
-.team-member p { color: #1976D2; } /* Primary Blue */
-.team-member p i { color: #42A5F5; } /* Sky Blue icon */
-
+.team-member p {
+  font-weight: 600;
+  color: #4A148C; /* Deep Purple */
+  font-size: 1.15rem;
+}
+.team-member p i {
+  margin-right: 8px;
+  color: #9575CD; /* Medium Purple icon */
+}
 /* --- Footer Section --- */
 .site-footer {
   background-color: #0A2840; /* Very Deep, Dark Blue */
