@@ -148,7 +148,7 @@ section h2 {
 section p.subtitle, section > .container > p:first-of-type {
     text-align: center;
     font-size: 1.15rem;
-    color: #0042B3; /* Dark Grey-Blue text */
+    color: #0042b3; /* Dark Grey-Blue text */
     margin-bottom: 35px;
     max-width: 750px;
     margin-left: auto;
@@ -339,7 +339,7 @@ section p.subtitle, section > .container > p:first-of-type {
 
 /* --- Danger Zone Alert System Section --- */
 .alert-system {
-  background-color: #E0F7FA; /* Very Light Cyan */
+  background-color: #E3F2FD; /* Very Light Cyan */
 }
 .alert-system .alert-banner.alert-danger strong {
   color: #B71C1C; /* Dark Red for emphasis */
@@ -382,7 +382,7 @@ section p.subtitle, section > .container > p:first-of-type {
 
 /* --- Firefighter Unit Response Tracker Section --- */
 .response-tracker {
-  background-color: #E3F2FD; /* Very Light Blue */
+  background-color: #ffffff; /* Very Light Blue */
 }
 .tracker-table-container {
   overflow-x: auto;
@@ -418,7 +418,7 @@ section p.subtitle, section > .container > p:first-of-type {
 
 /* --- Donation Page Section --- */
 .donation-page {
-  background-color: #E1F5FE; /* Lightest Blue */
+  background-color: #E3F2FD; /* Lightest Blue */
 }
 .donation-page h2 {
   color: #0277BD; /* Medium Light Blue */
@@ -445,32 +445,96 @@ section p.subtitle, section > .container > p:first-of-type {
 .btn-donate-select:hover { background-color: #0277BD; }
 
 .donation-form-container {
-  margin-top: 55px;
-  background: #ffffff;
-  padding: 35px 45px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(13, 71, 161, 0.12); /* Deep Blue shadow */
-  border: 1px solid #90CAF9; /* Lighter Blue border */
+  margin-top: 50px;
+  background: linear-gradient(to bottom right, #f0fdfa, #81c4f1);
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #bae6fd;
+  transition: transform 0.3s ease;
 }
-.donation-form-container h3 { color: #1565C0; font-size: 2rem; } /* Darker Primary Blue */
-.form-group label { color: #0D47A1; } /* Deep Blue label */
-#donation_amount { border: 1px solid #BBDEFB; } /* Light Blue border */
-.form-group p { color: #0D47A1; }
-.btn-payment-method {
-  border: 1px solid #90CAF9; background-color: #E3F2FD; color: #1976D2;
-}
-.btn-payment-method:hover { background-color: #BBDEFB; border-color: #64B5F6; }
-.btn-payment-method.selected { background-color: #1976D2; color: white; border-color: #1976D2; }
-#payment-element-placeholder {
-  border: 1px dashed #64B5F6; color: #1E88E5; background-color: #F0F8FF;
-}
-.btn-submit-donation { background-color: #1565C0; } /* Darker Primary Blue */
-.secure-note i { color: #1976D2; } /* Primary Blue icon */
 
+.donation-form-container:hover {
+  transform: translateY(-3px);
+}
+
+.donation-form-container h3 {
+  margin-bottom: 20px;
+  color: #0f766e;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.donation-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.payment-methods {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn-payment-method {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-payment-method[data-method="paypal"] {
+  background-color: #003087;
+  color: #fff;
+}
+
+.btn-payment-method[data-method="stripe"] {
+  background-color: #635bff;
+  color: #fff;
+}
+
+.btn-submit-donation {
+  padding: 10px 20px;
+  background-color: #0f766e;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+select[name="donation_purpose"] {
+  display: block;
+  margin: 0 auto;
+}
+
+#donation_amount {
+  width: 100%;
+  text-align: center;
+  font-size: 1.1rem;
+}
+.form-group {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.btn-submit-donation:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.secure-note {
+  font-size: 0.85rem;
+  color: #6b7280;
+  text-align: center;
+  margin-top: 10px;
+}
 
 /* --- About Us Section (Blue Theme) --- */
 .about-us {
-  background-color: #E3F2FD; /* Very Light Blue, consistent with other sections */
+  background-color: #ffffff; /* Very Light Blue, consistent with other sections */
 }
 .about-us h2, .about-us h3 {
   color: #0D47A1; /* Deep Blue */
