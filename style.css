@@ -15,7 +15,7 @@ html {
 body {
   font-family: 'Montserrat', sans-serif; /* NEW FONT */
   background-color: #F0F4F8; /* Light Blue-Grey background */
-  color: #3A4149; /* Darker grey for general text */
+  color: #000000; /* Darker grey for general text */
   line-height: 1.6;
   font-size: 16px;
 }
