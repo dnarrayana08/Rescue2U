@@ -13,9 +13,9 @@ html {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif; /* NEW FONT */
+  font-family: 'Montserrat', sans-serif;
   background-color: #F0F4F8; /* Light Blue-Grey background */
-  color: #000000; /* Darker grey for general text */
+  color: #3A4149; /* Darker grey for general text */
   line-height: 1.6;
   font-size: 16px;
 }
@@ -47,7 +47,7 @@ body {
 .logo a {
   color: #fff;
   font-size: 1.8rem;
-  font-weight: 700; /* Bolder for Montserrat */
+  font-weight: 700;
   text-decoration: none;
 }
 
@@ -143,11 +143,12 @@ section h2 {
   color: #0D47A1; /* Deep Blue for headings */
   font-weight: 600;
 }
-/* This selector for general section subtitles was white, changing to a readable dark color */
+
+/* General section subtitles - dark text for readability on light backgrounds */
 section p.subtitle, section > .container > p:first-of-type {
     text-align: center;
     font-size: 1.15rem;
-    color: #ffffff; /* Dark Grey-Blue text */
+    color: #0042b3; /* Dark Grey-Blue text */
     margin-bottom: 35px;
     max-width: 750px;
     margin-left: auto;
@@ -170,13 +171,14 @@ section p.subtitle, section > .container > p:first-of-type {
   font-weight: 700;
 }
 
-.hero-section .subtitle { /* THIS IS THE ONE FOR HERO SUBTITLE */
+/* Specific subtitle for hero section - light text on dark background */
+.hero-section .subtitle {
   font-size: 1.35rem;
   margin-bottom: 35px;
   max-width: 750px;
   margin-left: auto;
   margin-right: auto;
-  color: #ff0000; /* WHITE TEXT AS REQUESTED */
+  color: #E3F2FD; /* Very Light Blue text for contrast */
 }
 .hero-section .quick-alerts {
   margin-top: 35px;
@@ -208,9 +210,9 @@ section p.subtitle, section > .container > p:first-of-type {
 }
 
 .alert-warning {
-  background-color: #FFFDE7; /* Lighter Cream Yellow */
-  color: #5D4037; /* Brownish text */
-  border-left: 5px solid #FFB300; /* Amber border */
+  background-color: #FFF3E0; /* Lighter Orange/Amber */
+  color: #E65100; /* Dark Orange */
+  border-left: 5px solid #FFA726; /* Vibrant Amber border */
 }
 
 .alert-danger {
@@ -248,9 +250,7 @@ section p.subtitle, section > .container > p:first-of-type {
 .metric-card i {
   font-size: 2.5rem;
   margin-bottom: 15px;
-  /* Default icon color can be set here if needed, or overridden below */
 }
-/* SPECIFIC ICON COLORS FOR LIVE DATA DASHBOARD */
 .metrics-grid .metric-card:nth-of-type(1) i { /* Temperature */
   color: #4FC3F7; /* Light Blue */
 }
@@ -468,32 +468,27 @@ section p.subtitle, section > .container > p:first-of-type {
 .secure-note i { color: #1976D2; } /* Primary Blue icon */
 
 
-/* --- About Us Section --- */
+/* --- About Us Section (Blue Theme) --- */
 .about-us {
-  background-color: #A5BEE6; /* Pale Purple */
+  background-color: #E3F2FD; /* Very Light Blue, consistent with other sections */
 }
 .about-us h2, .about-us h3 {
-  color: #4A148C; /* Deep Purple */
+  color: #0D47A1; /* Deep Blue */
 }
 .about-us h3 {
   text-align: center;
   margin-top: 45px;
   margin-bottom: 25px;
-  font-size: 1.8rem; /* Larger */
+  font-size: 1.8rem;
 }
-.about-us > .container > p:first-of-type {
-  max-width: 800px;
-  margin: 0 auto 35px auto;
-  text-align: center;
-  color: #4E4E4E;
-  font-size: 1.1rem;
-  line-height: 1.7;
-}
+/* The general rule for section > .container > p:first-of-type now handles this */
+/* .about-us > .container > p:first-of-type is already covered by the general section p rule */
+
 .team-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 35px; /* Increased gap */
+  gap: 35px;
   margin-top: 25px;
 }
 .team-member {
@@ -502,28 +497,29 @@ section p.subtitle, section > .container > p:first-of-type {
   border-radius: 12px;
   text-align: center;
   width: calc(25% - 26.25px);
-  min-width: 220px; /* Increased min-width */
-  box-shadow: 0 4px 12px rgba(74, 20, 140, 0.1); /* Purple shadow */
-  border: 1px solid #E1BEE7; /* Light purple border */
+  min-width: 220px;
+  box-shadow: 0 4px 12px rgba(13, 71, 161, 0.1); /* Deep Blue shadow */
+  border: 1px solid #BBDEFB; /* Light blue border */
 }
 .team-member img {
-  width: 100px; /* Larger image */
+  width: 100px;
   height: 100px;
-  border-radius: 80%;
+  border-radius: 50%; /* Make it perfectly round */
   object-fit: cover;
   object-position: center;
   margin-bottom: 18px;
-  border: 4px solid #D1C4E9; /* Lavender border */
+  border: 4px solid #90CAF9; /* Lighter Blue border */
 }
 .team-member p {
   font-weight: 600;
-  color: #4A148C; /* Deep Purple */
+  color: #1976D2; /* Primary Blue */
   font-size: 1.15rem;
 }
 .team-member p i {
   margin-right: 8px;
-  color: #9575CD; /* Medium Purple icon */
+  color: #64B5F6; /* Bright Sky Blue icon */
 }
+
 /* --- Footer Section --- */
 .site-footer {
   background-color: #0A2840; /* Very Deep, Dark Blue */
@@ -534,7 +530,7 @@ section p.subtitle, section > .container > p:first-of-type {
 .footer-links a { color: #64B5F6; } /* Bright Sky Blue links */
 .footer-links a:hover { color: #fff; }
 
-/* --- Utility Classes (Copied from your purple CSS as they are general) --- */
+/* --- Utility Classes --- */
 .campaign-card p {
   flex-grow: 1;
   margin-bottom: 18px;
@@ -596,21 +592,6 @@ section p.subtitle, section > .container > p:first-of-type {
   text-align: center;
   margin-top: 12px;
 }
-.about-us > .container > p:first-of-type {
-  max-width: 800px;
-  margin: 0 auto 35px auto;
-  text-align: center;
-  color: #4E4E4E;
-  font-size: 1.1rem;
-  line-height: 1.7;
-}
-.team-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 35px;
-  margin-top: 25px;
-}
 .data-source-note {
   font-size: 0.9rem;
   color: #616161;
@@ -625,7 +606,7 @@ section p.subtitle, section > .container > p:first-of-type {
   border-bottom: none;
 }
 
-/* --- Responsive Design (Copied from your purple CSS as it's structural) --- */
+/* --- Responsive Design --- */
 @media (max-width: 992px) {
   .team-member {
     width: calc(50% - 17.5px);
@@ -637,23 +618,24 @@ section p.subtitle, section > .container > p:first-of-type {
     order: 3;
     width: 100%;
     position: absolute;
-    top: 100%;
+    top: 100%; /* Position below header */
     left: 0;
     background-color: #0D47A1; /* Match header */
     box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    /* display: none; */ /* Handled by .active class on ul */
   }
   .main-nav ul {
     flex-direction: column;
-    display: none;
+    display: none; /* Initially hidden */
     padding: 10px 0;
   }
-  .main-nav ul.active {
+  .main-nav ul.active { /* Added .active class for JS toggle */
     display: flex;
   }
   .main-nav li {
     text-align: center;
     padding: 12px 0;
-    border-bottom: 1px solid #1E88E566; /* Lighter Blue separator */
+    border-bottom: 1px solid rgba(30, 136, 229, 0.4); /* Lighter Blue separator, adjusted alpha */
   }
   .main-nav li:last-child {
     border-bottom: none;
@@ -675,8 +657,9 @@ section p.subtitle, section > .container > p:first-of-type {
   .hero-section h1 {
     font-size: 2.5rem;
   }
-  .hero-section .subtitle {
+  .hero-section .subtitle { /* Adjusted for hero section */
     font-size: 1.2rem;
+    color: #023b63; /* Ensure it stays light on hero background */
   }
 
   .charts-maps-grid {
@@ -691,7 +674,8 @@ section p.subtitle, section > .container > p:first-of-type {
   }
 
   .team-member {
-    width: calc(100% - 0px);
+    width: calc(100% - 0px); /* Full width on smaller screens */
+    min-width: unset; /* Remove min-width constraint */
   }
 
   .donation-form-container {
