@@ -148,7 +148,7 @@ section h2 {
 section p.subtitle, section > .container > p:first-of-type {
     text-align: center;
     font-size: 1.15rem;
-    color: #0042b3; /* Dark Grey-Blue text */
+    color: #0042B3; /* Dark Grey-Blue text */
     margin-bottom: 35px;
     max-width: 750px;
     margin-left: auto;
